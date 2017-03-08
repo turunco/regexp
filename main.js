@@ -3,6 +3,8 @@
 // var reg = /hoge+a/;
 // var reg = new RegExp('hoge+a');
 
+
+/// matching
 var array = [
     "abcdefg.",
     "abc efg.",
@@ -211,7 +213,7 @@ array.forEach((reg, index) => {
     console.log(reg.match(/^happy/));
 });
 
-console.log('== /$/');
+console.log('== /$/ : match tail charactor');
 array.forEach((reg, index) => {
     console.log(reg.match(/happy$/));
 });
@@ -220,7 +222,7 @@ array = [
     "book",
     "bookshelf"
 ];
-console.log('== /\b/');
+console.log('== /\b/ : separate the word');
 array.forEach((reg, index) => {
     console.log(reg.match(/\bbook\b/));
 });
@@ -265,3 +267,10 @@ console.log('== /\i/');
 array.forEach((reg, index) => {
     console.log(reg.match(/tokyo/i));
 });
+
+
+/// replace
+var tel_number_str = '123-456-7890';
+var tel_number = Number(tel_number_str.replace(/-/g, ''));
+console.log(typeof(tel_number));
+console.log(tel_number);
